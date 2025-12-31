@@ -29,9 +29,9 @@ const ReminderList: React.FC = () => {
     <div className="container mx-auto px-4 py-12 md:py-20 animate-in fade-in duration-500">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
         <div>
-          <h1 className="text-4xl font-bold mb-3 text-slate-900">Current Task Pipeline</h1>
+          <h1 className="text-4xl font-bold mb-3 text-slate-900">Task Pipeline</h1>
           <p className="text-slate-500 text-lg">
-            Active reminders being managed by the Microsoft Power Platform.
+            Reminders tracked via Microsoft Power Automate + Excel Online.
           </p>
         </div>
         <div className="flex gap-3">
@@ -41,7 +41,7 @@ const ReminderList: React.FC = () => {
             </button>
             <button className="inline-flex items-center px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-50">
                 <Download className="w-4 h-4 mr-2" />
-                Export CSV
+                Export
             </button>
         </div>
       </div>
@@ -100,7 +100,7 @@ const ReminderList: React.FC = () => {
       <div className="mt-8 flex items-center p-4 bg-amber-50 rounded-xl border border-amber-100">
         <AlertCircle className="text-amber-600 w-5 h-5 mr-3 flex-shrink-0" />
         <p className="text-sm text-amber-800">
-          <strong>Transparency Note:</strong> In a real production deployment, this data is dynamically fetched from <strong>Microsoft Lists / Dataverse</strong> via the Microsoft Graph API or Power Automate responses.
+          <strong>Transparency Note:</strong> This data is conceptually linked to your <strong>Excel Online Workbook</strong>. In a full production app, we would use Microsoft Graph API to display your real Excel rows here.
         </p>
       </div>
     </div>
