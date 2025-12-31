@@ -1,6 +1,9 @@
 # Deadline Reminder BOT
 
-A professional, high-performance task management solution optimized for the **Microsoft Azure Ecosystem**. 
+A professional, high-performance task management solution optimized for the **Microsoft Azure Ecosystem**.
+
+Deployed on AZURE -- https://mango-hill-010b6d600.1.azurestaticapps.net
+
 ## 🏗️ Architecture & Workflow
 
 This application utilizes a **Local-First Cloud-Native** architecture:
