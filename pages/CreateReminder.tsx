@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Send, CheckCircle, Info, Loader2, Link as LinkIcon, AlertCircle, Terminal, ExternalLink } from 'lucide-react';
+import { Send, CheckCircle, Info, Loader2, AlertCircle } from 'lucide-react';
 
 // INSTRUCTIONS: Paste your Power Automate HTTP POST URL here
 const POWER_AUTOMATE_WEBHOOK_URL = ""; 
@@ -48,7 +47,7 @@ const CreateReminder: React.FC = () => {
       }
     } catch (err) {
       setIsSubmitting(false);
-      setError('Connection failed. Are you using a Developer Sandbox account? Student accounts may block this request.');
+      setError('Connection failed. Please ensure the Power Automate endpoint is active.');
     }
   };
 
@@ -102,30 +101,12 @@ const CreateReminder: React.FC = () => {
           </p>
         </div>
 
-        {/* Developer Sandbox Guide */}
-        <div className="mb-8 p-6 bg-slate-900 rounded-2xl border border-slate-800 text-white">
-          <div className="flex items-center space-x-2 mb-4">
-            <Terminal className="text-blue-400 w-5 h-5" />
-            <h3 className="font-bold">Microsoft 365 Developer Access</h3>
-          </div>
-          <p className="text-sm text-slate-400 mb-4 leading-relaxed">
-            If your Student ID restricts Excel/Automate, use a <strong>M365 Developer Sandbox</strong> account. This provides a free Enterprise license with NO restrictions.
-          </p>
-          <a 
-            href="https://developer.microsoft.com/en-us/microsoft-365/dev-program" 
-            target="_blank"
-            className="inline-flex items-center text-xs font-bold text-blue-400 hover:text-blue-300 transition-colors"
-          >
-            Create Developer Account <ExternalLink className="w-3 h-3 ml-1.5" />
-          </a>
-        </div>
-
         {!POWER_AUTOMATE_WEBHOOK_URL && (
           <div className="mb-8 p-4 bg-amber-50 border border-amber-200 rounded-xl flex items-start">
             <AlertCircle className="text-amber-600 w-5 h-5 mr-3 mt-1 flex-shrink-0" />
             <div className="text-sm text-amber-800">
               <p className="font-bold mb-1">Configuration Needed</p>
-              <p>Paste your <strong>M365 Developer Flow URL</strong> in <code>pages/CreateReminder.tsx</code> to enable the live cloud workflow.</p>
+              <p>Paste your <strong>Workflow Webhook URL</strong> in <code>pages/CreateReminder.tsx</code> to enable the live cloud integration.</p>
             </div>
           </div>
         )}
@@ -161,7 +142,7 @@ const CreateReminder: React.FC = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="name@dev-sandbox.com"
+                  placeholder="name@example.com"
                   className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                 />
               </div>
