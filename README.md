@@ -1,7 +1,6 @@
-# Deadline Master — Premium Enterprise Portal
+# Deadline Reminder BOT
 
-A professional, high-performance task management solution optimized for the **Microsoft Azure Ecosystem**. This application is designed to provide enterprise-grade reliability with zero operational overhead, making it the perfect choice for maximizing your **$100 Azure Credit**.
-
+A professional, high-performance task management solution optimized for the **Microsoft Azure Ecosystem**. 
 ## 🏗️ Architecture & Workflow
 
 This application utilizes a **Local-First Cloud-Native** architecture:
