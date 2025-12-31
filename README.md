@@ -2,7 +2,8 @@
 
 A professional, high-performance task management solution optimized for the **Microsoft Azure Ecosystem**.
 
-Deployed on AZURE -- https://mango-hill-010b6d600.1.azurestaticapps.net
+Deployed on AZURE -- https://black-smoke-0a527b600.2.azurestaticapps.net/
+
 Deployed on Vercel -- https://microsoft-hacks.vercel.app/
 
 ## 🏗️ Architecture & Workflow
