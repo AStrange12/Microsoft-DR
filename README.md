@@ -1,39 +1,40 @@
-# Deadline Reminder Bot — Powered by Microsoft Tools
+# Deadline Master — Azure Deployment Guide
 
-A modern, production-quality responsive submission portal built for the **Microsoft Hackathon 2024**. This project demonstrates a serverless architecture where a React frontend integrates with the **Microsoft Power Platform** to automate organizational workflows.
+This app is optimized for **Azure Static Web Apps (SWA)**. Since it uses browser-native ES modules (via esm.sh), deployment is incredibly straightforward.
 
-## 🚀 Project Goal
-The **Deadline Reminder Bot** solves the problem of forgotten tasks and missed deadlines by providing a centralized, enterprise-grade submission portal. Instead of relying on a traditional custom backend, this solution leverages the **Microsoft Ecosystem** for storage, logic, and notifications.
+## 🚀 Azure Deployment (5-Minute Walkthrough)
 
-## 🏗️ Architecture
-The system follows a modern serverless pattern:
-1.  **Frontend:** React (Vite) + Tailwind CSS + Lucide Icons.
-2.  **API Layer:** Power Automate HTTP Request Trigger (Webhook).
-3.  **Data Tier:** Microsoft Lists or Dataverse (Storage).
-4.  **Action Layer:** Office 365 Outlook Connector for automated email reminders.
+### 1. Push Code to GitHub
+Azure Static Web Apps uses GitHub Actions to sync your code. 
+- Create a new repository on GitHub.
+- Push your local files to that repository.
 
-## ✨ Key Features
-- **Hero-Focused Home:** Clear value proposition and architecture visualization.
-- **Sync Workflow Form:** A clean, Microsoft-styled UI for submitting task details.
-- **Task Pipeline:** A read-only dashboard showing the status of current reminders (conceptual link to Excel/Lists).
-- **Interactive "How It Works" Page:** Deep dive into the cloud infrastructure and security.
-- **Responsive Design:** Optimized for mobile, tablet, and desktop viewing.
+### 2. Create the Azure Resource
+1. Sign in to the [Azure Portal](https://portal.azure.com).
+2. Click **Create a Resource** and search for **Static Web App**.
+3. Fill in the basics:
+   - **Subscription**: Select the one with your $100 credit.
+   - **Resource Group**: Create new (e.g., `deadline-bot-rg`).
+   - **Name**: `my-deadline-reminder`.
+   - **Region**: Choose the one closest to you (e.g., East US).
+4. **Deployment Details**:
+   - Source: **GitHub**.
+   - Authenticate and select your **Repo** and **Branch** (usually `main`).
 
-## 🛠️ Tech Stack
-- **Frontend:** React 19, TypeScript, Tailwind CSS.
-- **Icons:** Lucide React.
-- **Deployment:** Optimized for Vercel or Azure Static Web Apps.
-- **Microsoft Integration:** 
-    - **Power Automate:** Handles the business logic and triggers.
-    - **Microsoft Lists:** Acts as the primary database.
-    - **Dataverse:** Provides enterprise-scale data management and security.
+### 3. Build Configuration (CRITICAL)
+Under **Build Details**, use these settings:
+- **Build Presets**: `Other`
+- **App location**: `/`
+- **Api location**: (Leave empty)
+- **Output location**: `/` (This is because we have no build step).
 
-## 🔧 Local Configuration
-To enable the live cloud workflow:
-1. Create a **Cloud Flow** in [Power Automate](https://make.powerautomate.com/).
-2. Add an **HTTP Request** trigger.
-3. Paste the generated **HTTP POST URL** into `pages/CreateReminder.tsx` at the `POWER_AUTOMATE_WEBHOOK_URL` constant.
-4. Your form submissions will now trigger your live Microsoft workflow!
+### 4. Click 'Review + Create'
+Azure will start a GitHub Action. In 2 minutes, your site will be live at a `.azurestaticapps.net` URL!
+
+## 💾 Why this is the "Zero-Cost" Choice
+- **Static Hosting**: Azure SWA has a free tier that covers up to 100GB of bandwidth.
+- **Local Database**: By using `localStorage`, we avoid $20-50/mo database fees (CosmosDB/SQL), keeping your $100 credit untouched for other experiments.
+- **Persistence**: Your tasks are saved directly on your device, making it lightning fast.
 
 ---
-*Note: This project is a hackathon submission. Backend workflow and data storage are powered by Microsoft Power Automate and Microsoft Lists / Dataverse .*
+*Developed by Senior Engineering — Microsoft Cloud Optimized.*

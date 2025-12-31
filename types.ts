@@ -1,4 +1,3 @@
-
 export type Priority = 'Low' | 'Medium' | 'High' | 'Urgent';
 export type Status = 'Scheduled' | 'In Progress' | 'Completed' | 'Delayed';
 
@@ -11,6 +10,7 @@ export interface Task {
   deadline: string;
   priority: Priority;
   status: Status;
+  createdAt: number;
 }
 
 export interface NavItem {
