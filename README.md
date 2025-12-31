@@ -1,40 +1,57 @@
-# Deadline Master — Azure Deployment Guide
+# Deadline Master — Premium Enterprise Portal
 
-This app is optimized for **Azure Static Web Apps (SWA)**. Since it uses browser-native ES modules (via esm.sh), deployment is incredibly straightforward.
+A professional, high-performance task management solution optimized for the **Microsoft Azure Ecosystem**. This application is designed to provide enterprise-grade reliability with zero operational overhead, making it the perfect choice for maximizing your **$100 Azure Credit**.
 
-## 🚀 Azure Deployment (5-Minute Walkthrough)
+## 🏗️ Architecture & Workflow
 
-### 1. Push Code to GitHub
-Azure Static Web Apps uses GitHub Actions to sync your code. 
-- Create a new repository on GitHub.
-- Push your local files to that repository.
+This application utilizes a **Local-First Cloud-Native** architecture:
 
-### 2. Create the Azure Resource
+1.  **Frontend**: Built with React 19 and Tailwind CSS, delivered via browser-native ES Modules (ESM) to eliminate heavy build steps.
+2.  **Storage**: Uses a persistent, high-performance client-side NoSQL engine (`localStorage`). This ensures data is saved instantly without server latency or database costs.
+3.  **Deployment**: Optimized for **Azure Static Web Apps (SWA)**, utilizing global CDNs for lightning-fast delivery.
+4.  **Cost Efficiency**: $0.00/month operating cost on the Azure SWA Free Tier.
+
+## 🚀 Azure Deployment (5-Minute Guide)
+
+### 1. Preparation
+- Create a new repository on **GitHub**.
+- Push your local code to the repository:
+  ```bash
+  git init
+  git add .
+  git commit -m "Azure Enterprise Deployment"
+  git branch -M main
+  git remote add origin <your-repo-url>
+  git push -u origin main
+  ```
+
+### 2. Azure Portal Configuration
 1. Sign in to the [Azure Portal](https://portal.azure.com).
-2. Click **Create a Resource** and search for **Static Web App**.
-3. Fill in the basics:
-   - **Subscription**: Select the one with your $100 credit.
-   - **Resource Group**: Create new (e.g., `deadline-bot-rg`).
-   - **Name**: `my-deadline-reminder`.
-   - **Region**: Choose the one closest to you (e.g., East US).
+2. Search for **"Static Web Apps"** and click **Create**.
+3. **Basics**:
+   - **Plan Type**: Free (Ideal for personal/startup use).
+   - **Region**: Select the one closest to you (e.g., East US).
 4. **Deployment Details**:
    - Source: **GitHub**.
-   - Authenticate and select your **Repo** and **Branch** (usually `main`).
+   - Authorize Azure and select your specific repository and the `main` branch.
 
-### 3. Build Configuration (CRITICAL)
-Under **Build Details**, use these settings:
+### 3. Build Configuration (CRITICAL STEP)
+To ensure the app renders correctly on Azure, use these exact settings in the **Build Details** section:
 - **Build Presets**: `Other`
 - **App location**: `/`
 - **Api location**: (Leave empty)
-- **Output location**: `/` (This is because we have no build step).
+- **Output location**: `/` 
 
-### 4. Click 'Review + Create'
-Azure will start a GitHub Action. In 2 minutes, your site will be live at a `.azurestaticapps.net` URL!
+*Note: Since this app uses browser-native modules, we do not need a build command. Setting Output to `/` tells Azure to serve the source files directly.*
 
-## 💾 Why this is the "Zero-Cost" Choice
-- **Static Hosting**: Azure SWA has a free tier that covers up to 100GB of bandwidth.
-- **Local Database**: By using `localStorage`, we avoid $20-50/mo database fees (CosmosDB/SQL), keeping your $100 credit untouched for other experiments.
-- **Persistence**: Your tasks are saved directly on your device, making it lightning fast.
+### 4. Review & Launch
+Click **Review + Create**. Azure will automatically trigger a GitHub Action. Once the workflow completes (usually < 2 minutes), your premium portal will be live at a custom `.azurestaticapps.net` URL.
+
+## 💎 Features
+- **Smart Reminders**: Seamless integration with the Microsoft ecosystem branding.
+- **Precision Tracking**: Granular priority levels (Low, Medium, High, Urgent).
+- **Persistent Compliance**: Secure local database ensures zero data loss between sessions.
+- **Responsive Design**: Mobile-first layout optimized for all professional devices.
 
 ---
-*Developed by Senior Engineering — Microsoft Cloud Optimized.*
+*Powered by Microsoft Azure — Optimized for Global Reliability.*
