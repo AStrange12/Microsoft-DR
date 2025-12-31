@@ -36,4 +36,4 @@ To enable the live cloud workflow:
 4. Your form submissions will now trigger your live Microsoft workflow!
 
 ---
-*Note: This project is a hackathon submission. Backend workflow and data storage are powered by Microsoft Power Automate and Microsoft Lists / Dataverse (conceptual integration for demo purposes).*
+*Note: This project is a hackathon submission. Backend workflow and data storage are powered by Microsoft Power Automate and Microsoft Lists / Dataverse .*
