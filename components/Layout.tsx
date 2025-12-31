@@ -74,10 +74,9 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-slate-100 mt-8 pt-8 text-center">
           <p className="text-xs text-slate-400 italic">
-            Backend workflow and data storage are powered by Microsoft Power Automate and Microsoft Lists / Dataverse (conceptual integration).
+            Backend workflow and data storage are powered by Microsoft Azure
           </p>
           <p className="text-[10px] text-slate-300 mt-2 uppercase tracking-widest">
-            Microsoft Hackathon Project 2024
           </p>
         </div>
       </div>
